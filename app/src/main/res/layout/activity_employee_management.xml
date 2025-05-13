@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EmployeeManagementActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TableLayout
+            android:stretchColumns="*"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:onClick="open_employee_healthcare_activity"
+                        android:id="@+id/imgEmployeeHealthcare"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ic_employee_healthcare" />
+
+                    <TextView
+                        android:onClick="open_employee_healthcare_activity"
+                        android:id="@+id/txtEmployeeHealthcare"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#E1B5F0"
+                        android:text="@string/title_healthcare"
+                        android:textAlignment="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgEmployeeSalary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ic_employee_salary" />
+
+                    <TextView
+                        android:id="@+id/txtEmployeeSalary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#E1B5F0"
+                        android:text="@string/title_salary"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </TableRow>
+
+            <!-- Dòng 2: Thưởng & Chấm công -->
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgEmployeeBonus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ic_employee_bonus" />
+
+                    <TextView
+                        android:id="@+id/txtEmployeeBonus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#D0F0C0"
+                        android:text="Bonus"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgEmployeeAttendance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ic_employee_attendance" />
+
+                    <TextView
+                        android:id="@+id/txtEmployeeAttendance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#D0F0C0"
+                        android:text="Attendance"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </TableRow>
+
+            <!-- Dòng 3: Nghỉ phép & Hồ sơ -->
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgEmployeeLeave"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ic_employee_leave" />
+
+                    <TextView
+                        android:id="@+id/txtEmployeeLeave"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#F5DEB3"
+                        android:text="Leave"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgEmployeeProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ic_employee_profile" />
+
+                    <TextView
+                        android:id="@+id/txtEmployeeProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#F5DEB3"
+                        android:text="Profile"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </TableRow>
+
+            <!-- Dòng 4: Đào tạo & Khen thưởng -->
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgEmployeeTraining"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ic_employee_training" />
+
+                    <TextView
+                        android:id="@+id/txtEmployeeTraining"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#D1EAF5"
+                        android:text="Training"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgEmployeeAward"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ic_employee_award" />
+
+                    <TextView
+                        android:id="@+id/txtEmployeeAward"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#D1EAF5"
+                        android:text="Award"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </TableRow>
+
+            <!-- Dòng 5: Bảo hiểm & Thuế -->
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgEmployeeInsurance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ic_employee_insurance" />
+
+                    <TextView
+                        android:id="@+id/txtEmployeeInsurance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FDA6C8"
+                        android:text="Insurance"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgEmployeeTax"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ic_employee_tax" />
+
+                    <TextView
+                        android:id="@+id/txtEmployeeTax"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FDA6C8"
+                        android:text="Tax"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </TableRow>
+
+            <!-- Dòng 5: Support & Settings -->
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgEmployeeSupport"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ic_employee_support" />
+
+                    <TextView
+                        android:id="@+id/txtEmployeeSupport"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#CCE5FF"
+                        android:text="Support"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgEmployeeSetting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ic_employee_settings" />
+
+                    <TextView
+                        android:id="@+id/txtEmployeeSetting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#CCE5FF"
+                        android:text="Settings"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </TableRow>
+
+            <!-- Dòng 6: Help & Log out -->
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgEmployeeHelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ic_employee_help" />
+
+                    <TextView
+                        android:id="@+id/txtEmployeeHelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FFE4B5"
+                        android:text="Help"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgEmployeeLogout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ic_employee_logout" />
+
+                    <TextView
+                        android:id="@+id/txtEmployeeLogout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FFE4B5"
+                        android:text="Log out"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
+</LinearLayout>
