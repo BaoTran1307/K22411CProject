@@ -65,18 +65,18 @@ public class MainActivity extends AppCompatActivity {
                 openCustomerManagementActivity();
             }
         });
-        imgCategory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openCategoryManagementActivity();
-            }
-        });
-        txtCategory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openCategoryManagementActivity();
-            }
-        });
+//        imgCategory.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                openCategoryManagementActivity();
+//            }
+//        });
+//        txtCategory.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                openCategoryManagementActivity();
+//            }
+//        });
         imgProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,11 +100,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent=new Intent(MainActivity.this, CustomerManagementActivity.class);
         startActivity(intent);
     }
-    void openCategoryManagementActivity()
-    {
-        Intent intent=new Intent(MainActivity.this, CategoryManagementActivity.class);
-        startActivity(intent);
-    }
+//    void openCategoryManagementActivity()
+//    {
+//        Intent intent=new Intent(MainActivity.this, CategoryManagementActivity.class);
+//        startActivity(intent);
+//    }
     void openProductManagementActivity()
     {
         Intent intent=new Intent(MainActivity.this, ProductManagementActivity.class);
