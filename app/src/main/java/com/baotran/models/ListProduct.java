@@ -1,11 +1,13 @@
 package com.baotran.models;
 
+import com.baotran.k22411csampleproject.R;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class ListProduct implements Serializable {
-    private ArrayList<Product> products;
+public class ListProduct {
+    ArrayList<Product> products;
 
     public ListProduct() {
         products = new ArrayList<>();
@@ -19,27 +21,18 @@ public class ListProduct implements Serializable {
         this.products = products;
     }
 
-    public void addProduct(Product p) {
-        products.add(p);
-    }
-
-    public void generate_sample_dataset() {
-        Random random = new Random();
-        String[] sampleNames = {"Laptop", "Phone", "Tablet", "Camera", "Monitor", "Headphones", "Keyboard", "Mouse", "Speaker", "Charger"};
-        String[] sampleDescriptions = {
-                "Sản phẩm chất lượng cao", "Giá tốt", "Ưa chuộng", "Bán chạy", "Đang khuyến mãi", "Sản phẩm mới", "Hàng tồn kho"
-        };
-
-        for (int i = 1; i <= 100; i++) {
-            int id = i;
-            String name = sampleNames[random.nextInt(sampleNames.length)] + " " + (1000 + i);
-            int quantity = random.nextInt(100) + 1;
-            double price = 100000 + (random.nextInt(50) * 10000);
-            int cate_id = random.nextInt(6) + 1;
-            String description = sampleDescriptions[random.nextInt(sampleDescriptions.length)];
-
-            Product p = new Product(id, name, quantity, price, cate_id, description);
-            addProduct(p);
-        }
+    public void generate_sample_product_dataset() {
+        Category c1 = new Category(110, "Soft Drink", 1);
+        Product p1 = new Product(1, "Coca Cola", 100, 10.0, R.mipmap.coca);
+        Product p2 = new Product(2, "Pepsi", 120, 9.5, R.mipmap.pepsi);
+        Product p3 = new Product(3, "7Up", 90, 8.0, R.mipmap.sevenup);
+        Product p4 = new Product(4, "Fanta", 85, 8.5, R.mipmap.fanta);
+        Product p5 = new Product(5, "Sprite", 95, 9.0, R.mipmap.sprite);
+        products.add(p1);
+        products.add(p2);
+        products.add(p3);
+        products.add(p4);
+        products.add(p5);
     }
 }
+
