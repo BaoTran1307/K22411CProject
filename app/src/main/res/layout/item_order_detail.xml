@@ -1,39 +1,82 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="8dp"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="4dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
 
-    <TextView android:id="@+id/txtProductName"
-        android:text="Product Name"
-        android:textStyle="bold"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
 
-    <TextView android:id="@+id/txtQuantity"
-        android:text="Quantity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <!-- Product ID -->
+        <TextView
+            android:id="@+id/txtProductId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Product ID: "
+            android:textColor="#212121"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingBottom="4dp" />
 
-    <TextView android:id="@+id/txtPrice"
-        android:text="Unit Price"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <!-- Quantity -->
+        <TextView
+            android:id="@+id/txtQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quantity: "
+            android:textColor="#424242"
+            android:textSize="14sp"
+            android:paddingBottom="4dp" />
 
-    <TextView android:id="@+id/txtVat"
-        android:text="VAT"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <!-- Price -->
+        <TextView
+            android:id="@+id/txtPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Price: "
+            android:textColor="#424242"
+            android:textSize="14sp"
+            android:paddingBottom="4dp" />
 
-    <TextView android:id="@+id/txtDiscount"
-        android:text="Discount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <!-- Discount -->
+        <TextView
+            android:id="@+id/txtDiscount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Discount: "
+            android:textColor="#E91E63"
+            android:textSize="14sp"
+            android:paddingBottom="4dp" />
 
-    <TextView android:id="@+id/txtTotal"
-        android:text="Total"
-        android:textColor="#E91E63"
-        android:textStyle="italic"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+        <!-- VAT -->
+        <TextView
+            android:id="@+id/txtVAT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VAT: "
+            android:textColor="#424242"
+            android:textSize="14sp"
+            android:paddingBottom="4dp" />
+
+        <!-- Total Value -->
+        <TextView
+            android:id="@+id/txtTotalValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total Value: "
+            android:textColor="#D81B60"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

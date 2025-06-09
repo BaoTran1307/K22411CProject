@@ -1,40 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="16dp"
+    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <TextView android:id="@+id/txtOrderCode"
+    <TextView
+        android:id="@+id/txtOrderCode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Order Code" />
+        android:text="Order Code: "
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-    <TextView android:id="@+id/txtOrderDate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Order Date" />
-
-    <TextView android:id="@+id/txtCustomerName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Customer" />
-
-    <TextView android:id="@+id/txtEmployeeName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Employee" />
-
-    <TextView android:id="@+id/txtOrderTotalValue"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Total" />
-
-    <!-- ListView để hiện sản phẩm -->
     <ListView
-        android:id="@+id/listOrderItems"
+        android:id="@+id/lvOrderDetails"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:divider="@android:color/darker_gray"
-        android:dividerHeight="1dp" />
+        android:layout_weight="1" />
+
 </LinearLayout>

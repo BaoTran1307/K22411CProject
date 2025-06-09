@@ -1,5 +1,6 @@
 package com.baotran.k22411csampleproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -34,14 +35,22 @@ public class OrdersViewerActivity extends AppCompatActivity {
     }
 
     private void addViews() {
-        lvOrdersView=findViewById(R.id.lvOrdersViewer);
-        adapter=new OrdersViewerAdapter(this,R.layout.item_ordersviewer);
+        lvOrdersView = findViewById(R.id.lvOrdersViewer);
+        adapter = new OrdersViewerAdapter(this, R.layout.item_ordersviewer);
         lvOrdersView.setAdapter(adapter);
 
-        SQLiteConnector connector=new SQLiteConnector(this);
-        OrdersViewerConnector ovc=new OrdersViewerConnector();
-        ArrayList<OrdersViewer> dataset=ovc.getAllOrderViewers(connector.openDatabase());
+        SQLiteConnector connector = new SQLiteConnector(this);
+        OrdersViewerConnector ovc = new OrdersViewerConnector();
+        ArrayList<OrdersViewer> dataset = ovc.getAllOrderViewers(connector.openDatabase());
         adapter.addAll(dataset);
 
+        // Thêm sự kiện click vào ListView
+        lvOrdersView.setOnItemClickListener((parent, view, position, id) -> {
+            OrdersViewer order = adapter.getItem(position);
+            Intent intent = new Intent(OrdersViewerActivity.this, OrderDetailActivity.class);
+            intent.putExtra("ORDER_ID", order.getId());
+            intent.putExtra("ORDER_CODE", order.getCode());
+            startActivity(intent);
+        });
     }
 }

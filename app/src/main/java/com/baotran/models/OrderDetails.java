@@ -10,6 +10,9 @@ public class OrderDetails {
     private double VAT;
     private double TotalValue;
 
+    public OrderDetails() {
+    }
+
     public int getId() {
         return Id;
     }
@@ -71,7 +74,8 @@ public class OrderDetails {
         return TotalValue;
     }
 
-
-    public OrderDetails() {
+    public double setTotalValue(double aDouble) {
+        TotalValue=(Quantity*Price-Discount/100*Quantity*Price)*(1+VAT/100);
+        return TotalValue;
     }
 }

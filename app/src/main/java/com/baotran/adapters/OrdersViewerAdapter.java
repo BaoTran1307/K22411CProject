@@ -42,17 +42,6 @@ public class OrdersViewerAdapter extends ArrayAdapter<OrdersViewer> {
         txtCustomerName.setText(ov.getCustomerName());
         txtEmployeeName.setText(ov.getEmployeeName());
         txtOrderTotalValue.setText(ov.getTotalOrderValue()+ "VNĐ");
-        item.setOnClickListener(v -> {
-            Intent intent = new Intent(context, OrderDetailActivity.class);
-            intent.putExtra("orderId", ov.getId());
-            intent.putExtra("code", ov.getCode());
-            intent.putExtra("orderDate", ov.getOrderDate());
-            intent.putExtra("customerName", ov.getCustomerName());
-            intent.putExtra("employeeName", ov.getEmployeeName());
-            intent.putExtra("total", ov.getTotalOrderValue());
-
-            context.startActivity(intent);
-        });
 
 
         return item;
