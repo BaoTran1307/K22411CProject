@@ -44,4 +44,10 @@
     <string name="title_product_price">Product Price:</string>
     <string name="title_product_image_id">Image ID:</string>
     <string name="title_payment_method">Payment Method</string>
+    <string name="title_order">Order</string>
+    <string name="title_ordercode">Order Code</string>
+    <string name="title_orderdate">Order Date</string>
+    <string name="title_customername">Customer Name</string>
+    <string name="title_employeename">Employee Name</string>
+    <string name="title_totalvalue">Total Order Value</string>
 </resources>
