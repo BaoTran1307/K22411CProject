@@ -1,7 +1,9 @@
 package com.baotran.connectors;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.baotran.models.Customer;
 import com.baotran.models.ListCustomer;
@@ -79,5 +81,35 @@ public class CustomerConnector {
         }
         cursor.close();
         return listCustomer;
+    }
+    public long saveNewCustomer(Customer c,SQLiteDatabase database)
+    {
+        ContentValues values=new ContentValues();
+        values.put("Name",c.getName());
+        values.put("Email",c.getEmail());
+        values.put("Phone",c.getPhone());
+        values.put("UserName",c.getUsername());
+        values.put("Password",c.getPassword());
+        long flag = database.insert("Customer", null, values);
+        if (flag == -1) {
+            Log.e("INSERT_FAIL", "Lỗi khi thêm khách hàng mới");
+        }
+        return flag;
+    }
+    public long saveUpdateCustomer(Customer c,SQLiteDatabase database)
+    {
+        ContentValues values=new ContentValues();
+        values.put("Name",c.getName());
+        values.put("Email",c.getEmail());
+        values.put("Phone",c.getPhone());
+        values.put("UserName",c.getUsername());
+        values.put("Password",c.getPassword());
+        long flag = database.update("Customer", values, "Id = ?", new String[]{String.valueOf(c.getId())});
+        return flag;
+    }
+    public long removeCustomer(String id, SQLiteDatabase database)
+    {
+        int flag=database.delete("Customer", "Id=?",new String[]{id});
+        return flag;
     }
 }

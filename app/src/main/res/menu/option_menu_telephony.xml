@@ -1,0 +1,6 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/mnu_viettel" android:title="Lọc Viettel" />
+    <item android:id="@+id/mnu_mobifone" android:title="Lọc Mobifone" />
+    <item android:id="@+id/mnu_other" android:title="Lọc Khác" />
+    <item android:id="@+id/mnu_all" android:title="Hiện tất cả" />
+</menu>

@@ -8,6 +8,17 @@
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
+    <TextView
+        android:id="@+id/tvNetworkStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Checking network..."
+        android:gravity="center"
+        android:padding="8dp"
+        android:textColor="#FFFFFF"
+        android:background="#888888" />
+
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"

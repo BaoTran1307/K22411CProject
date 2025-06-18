@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     TextView txtPaymentMethod;
     ImageView imgOrder;
     TextView txtOrder;
+    ImageView imgTelephony;
+    TextView txtTelephony;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,7 +132,24 @@ public class MainActivity extends AppCompatActivity {
                 openOrdersViewerActivity();
             }
         });
+        imgTelephony.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openTelephonyActivity();
+            }
+        });
+        txtTelephony.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openTelephonyActivity();
+            }
+        });
 
+    }
+
+    private void openTelephonyActivity() {
+        Intent intent=new Intent(MainActivity.this, TelephonyActivity.class);
+        startActivity(intent);
     }
 
     private void openOrdersViewerActivity() {
@@ -174,8 +193,8 @@ public class MainActivity extends AppCompatActivity {
         txtEmployee=findViewById(R.id.txtEmployee);
         imgCustomer=findViewById(R.id.imgCustomer);
         txtCustomer=findViewById(R.id.txtCustomer);
-        imgCategory=findViewById(R.id.imgCategory);
-        txtCategory=findViewById(R.id.txtCategory);
+//        imgCategory=findViewById(R.id.imgCategory);
+//        txtCategory=findViewById(R.id.txtCategory);
         imgProduct=findViewById(R.id.imgProduct);
         txtProduct=findViewById(R.id.txtProduct);
         imgAdvancedProduct=findViewById(R.id.imgAdvancedProduct);
@@ -184,5 +203,7 @@ public class MainActivity extends AppCompatActivity {
         txtPaymentMethod=findViewById(R.id.txtPaymentMethod);
         imgOrder=findViewById(R.id.imgOrder);
         txtOrder=findViewById(R.id.txtOrder);
+        imgTelephony=findViewById(R.id.imgTelephony);
+        txtTelephony=findViewById(R.id.txtTelephony);
     }
 }

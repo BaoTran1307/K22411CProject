@@ -25,7 +25,7 @@
                 <ImageView
                     android:id="@+id/imgEmployee"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="105dp"
                     app:srcCompat="@mipmap/ic_employee" />
 
                 <TextView
@@ -46,7 +46,7 @@
                 <ImageView
                     android:id="@+id/imgCustomer"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="105dp"
                     app:srcCompat="@mipmap/ic_customer" />
 
                 <TextView
@@ -76,15 +76,6 @@
                     android:layout_height="wrap_content"
                     app:srcCompat="@mipmap/ic_category" />
 
-                <TextView
-                    android:id="@+id/txtCategory"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/title_category"
-                    android:textAlignment="center"
-                    android:textColor="#F44336"
-                    android:textSize="24sp" />
-
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -97,7 +88,7 @@
                         <ImageView
                             android:id="@+id/imgAdvancedProduct"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="105dp"
                             app:srcCompat="@mipmap/ic_advanced_products" />
 
                         <TextView
@@ -122,7 +113,7 @@
                 <ImageView
                     android:id="@+id/imgProduct"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="105dp"
                     app:srcCompat="@mipmap/ic_product" />
 
                 <TextView
@@ -149,7 +140,7 @@
                 <ImageView
                     android:id="@+id/imgPaymentMethod"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="105dp"
                     app:srcCompat="@mipmap/ic_paymentmethod" />
 
                 <TextView
@@ -170,7 +161,7 @@
                 <ImageView
                     android:id="@+id/imgOrder"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="105dp"
                     app:srcCompat="@mipmap/ic_order" />
 
                 <TextView
@@ -182,6 +173,34 @@
                     android:textColor="#F44336"
                     android:textSize="24sp" />
             </LinearLayout>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgTelephony"
+                    android:layout_width="match_parent"
+                    android:layout_height="105dp"
+                    app:srcCompat="@mipmap/ic_telephony" />
+
+                <TextView
+                    android:id="@+id/txtTelephony"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/telephony"
+                    android:textAlignment="center"
+                    android:textColor="#F44336"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+
 
         </TableRow>
 

@@ -50,4 +50,8 @@
     <string name="title_customername">Customer Name</string>
     <string name="title_employeename">Employee Name</string>
     <string name="title_totalvalue">Total Order Value</string>
+    <string name="telephony">Telephony</string>
+    <string name="title_contact_name">Contact Name:</string>
+    <string name="title_phone_number">Phone Number:</string>
+    <string name="title_body">Body:</string>
 </resources>

@@ -1,14 +1,22 @@
 package com.baotran.k22411csampleproject;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -37,6 +45,9 @@ public class LoginActivity extends AppCompatActivity {
     String DATABASE_NAME="SalesDatabase.sqlite";
     private static final String DB_PATH_SUFFIX = "/databases/";
     SQLiteDatabase database=null;
+    BroadcastReceiver networkReceiver=null;
+    Button btnLogin;
+    private TextView tvNetworkStatus;
 
 
     @Override
@@ -51,12 +62,58 @@ public class LoginActivity extends AppCompatActivity {
             return insets;
         });
         processCopy();
+        setupBroadcastReceiver();
+        tvNetworkStatus = findViewById(R.id.tvNetworkStatus);
+        updateNetworkStatus();
+    }
+
+    private void updateNetworkStatus() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+
+        if (activeNetwork != null && activeNetwork.isConnected()) {
+            if (activeNetwork.getType() == ConnectivityManager.TYPE_WIFI) {
+                // WiFi
+                tvNetworkStatus.setText("Connected to WiFi");
+                tvNetworkStatus.setBackgroundColor(Color.parseColor("#4CAF50")); // Green
+            } else if (activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE) {
+                // 4G/Mobile
+                tvNetworkStatus.setText("Connected to Mobile Data");
+                tvNetworkStatus.setBackgroundColor(Color.parseColor("#FF9800")); // Orange
+            }
+        } else {
+            // No connection
+            tvNetworkStatus.setText("No Internet Connection");
+            tvNetworkStatus.setBackgroundColor(Color.parseColor("#F44336")); // Red
+        }
+    }
+
+    private void setupBroadcastReceiver() {
+        networkReceiver=new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                //chút nữa sẽ tự động nhảy vào đây khi Internet bị thay đổi trạng thái
+                ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(CONNECTIVITY_SERVICE);
+                NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+                if(networkInfo != null && networkInfo.isConnected())
+                {
+                    //vào đây tức là có internet (ko quan tâm wifi hay 4G)
+                    btnLogin.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    btnLogin.setVisibility(View.INVISIBLE);
+                }
+            }
+        };
     }
 
     private void addViews() {
         edtUserName=findViewById(R.id.edtUserName);
         edtPassword=findViewById(R.id.edtPassword);
         chkSaveLogin=findViewById(R.id.chkSaveLoginInfor);
+        btnLogin=findViewById(R.id.btnLogin);
+
     }
 
     public void do_login(View view) {
@@ -128,6 +185,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         saveLoginInformation();
+        if(networkReceiver!=null)
+        {
+            unregisterReceiver(networkReceiver);
+        }
     }
     public void restoreLoginInformation()
     {
@@ -145,6 +206,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         restoreLoginInformation();
+
+        IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(networkReceiver, filter);
     }
     private void processCopy() {
         //private app
