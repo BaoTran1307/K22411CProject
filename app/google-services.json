@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "90315840938",
+    "project_id": "k22411csampleproject-9970a",
+    "storage_bucket": "k22411csampleproject-9970a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90315840938:android:0ddbf82fe0ffe638691fd3",
+        "android_client_info": {
+          "package_name": "com.baotran.k22411csampleproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgfOslFG5NYFlD0G2MI-7GJxKrkYnHozk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
